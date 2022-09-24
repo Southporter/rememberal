@@ -7,7 +7,7 @@ RUN npm install -g elm && \
     npx elm make src/Main.elm --output index.js --optimize
 
 
-FROM docker.io/library/python:3.10-alpine as app
+FROM docker.io/library/python:3.10-bullseye as app
 
 WORKDIR /app
 COPY --from=frontend /node/index.* .

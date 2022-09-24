@@ -13,7 +13,6 @@ import Maybe exposing (Maybe)
 import Json.Decode exposing (Decoder, field, string, int, nullable, succeed)
 import Json.Encode
 import UserIcon
-import Debug
 import Tombstone
 
 main : Program () Model Msg
@@ -266,7 +265,7 @@ errToStr error =
 view : Model -> Html Msg
 view model =
   let
-    _ = Debug.log "model" model
+    -- _ = Debug.log "model" model
     inner = case model.contests.loadState of
       Done ->
         viewContests model
@@ -278,7 +277,8 @@ view model =
         case model.contests.error of
           Just e ->
             div [] [ text "Error fetching list"
-                   , text (errToStr (Debug.log "error" e))]
+                   -- , text (errToStr (Debug.log "error" e))]
+                   , text (errToStr e)]
           Nothing ->
             div [] [ text "Error fetching list" ]
 
