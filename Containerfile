@@ -1,7 +1,7 @@
 FROM docker.io/library/python:3.10-bullseye as app
 
 WORKDIR /app
-COPY frontend/index.* .
+COPY frontend/index.* public/.
 COPY backends/python .
 
 RUN pip install uvicorn==0.17.6 fastapi==0.75.2 sqlalchemy==1.4.36
