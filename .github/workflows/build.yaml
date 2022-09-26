@@ -10,11 +10,7 @@ env:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        architectures:
-          - amd64
-          - arm64
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
 
