@@ -4,8 +4,8 @@ WORKDIR /app
 RUN pip install uvicorn==0.17.6 fastapi==0.75.2 sqlalchemy==1.4.36
 
 COPY backends/python .
-RUN rm public || mkdir public
-COPY frontend/index.* public/.
+RUN mkdir public
+COPY frontend/index.* public/
 
 EXPOSE 8000
 
